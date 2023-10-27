@@ -1,0 +1,16 @@
+Wait for the user to press the generate password button. After this, continue onto the next line
+
+Ask the user for the length of the password
+If the length of the password is less than 8 characters or more than 128 characters, say that the password length is invalid and go back to line 1
+If the length of the password is between 8 characters and 128 characters or equal to 8 characters or 128 characters, continue onto the next line
+
+Ask the user if they want to include lowercase letters in the password
+Ask the user if they want to include uppercase letters in the password
+Ask the user if they want to include numeric characters in the password
+Ask the user if they want to include special characters in the password
+
+If none of the character options are selected, go back to line 1
+If at least one of the character options is selected, continue onto the next line
+
+Generate a password containing the length specified by the user and all of the characters specified by the user
+Display the generated password in the text box with the id password
