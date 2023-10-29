@@ -89,6 +89,10 @@ var upperCasedCharacters = [
 ];
 
 var charactersInPassword = [];
+var lengthOfPassword;
+let randomElement;
+var finalPassword = [];
+var finalestPassword = [];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
