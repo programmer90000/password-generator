@@ -122,15 +122,13 @@ function getPasswordOptions() {
             charactersInPassword.push(...specialCharacters);
         }
         
-        if (!(lowerCaseLetters || upperCaseLetters || numbers || specialCharacters)) {
-            console.log("None of the conditions are met");
+        if (!(lowerCaseLetters) && !(upperCaseLetters) && !(numbers) && !(specialCharacters)) {
+            alert("None of the conditions are met");
         } else {
-            console.log("This password meets at least one of the conditions");
-
+            getRandom(charactersInPassword);
+            return finalPassword;
         }
     }
-    console.log(charactersInPassword);
-
 }
 
 getPasswordOptions();
