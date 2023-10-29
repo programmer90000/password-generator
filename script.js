@@ -96,7 +96,7 @@ var finalestPassword = [];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-    let lengthOfPassword = prompt("How long should the password be");
+    lengthOfPassword = prompt("How long should the password be");
     lengthOfPassword = parseInt(lengthOfPassword);
 
     if (lengthOfPassword < 8 || lengthOfPassword > 128 || isNaN(lengthOfPassword)) {
@@ -121,7 +121,7 @@ function getPasswordOptions() {
         if (specialCharactersInPassword) {
             charactersInPassword.push(...specialCharacters);
         }
-        
+
         if (!(lowerCaseLetters) && !(upperCaseLetters) && !(numbers) && !(specialCharacters)) {
             alert("None of the conditions are met");
         } else {
@@ -134,7 +134,7 @@ function getPasswordOptions() {
 getPasswordOptions();
 
 // Function for getting a random element from an array
-function getRandom(arr) {
+function getRandom() {
     for (let i = 0; i < lengthOfPassword; i++) {
         randomElement = charactersInPassword[Math.floor(Math.random() * charactersInPassword.length)];
         finalPassword.push(randomElement);
@@ -142,20 +142,23 @@ function getRandom(arr) {
     finalPassword = finalPassword.join("")
 }
 
-// Function to generate password with user input
-function generatePassword() {
-
-}
-
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
+document.getElementById('password').innerText = finalPassword;
+
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
+    charactersInPassword = [];
+    lengthOfPassword = undefined;
+    randomElement = undefined;
+    finalestPassword = [];
+    finalPassword = [];
+    getPasswordOptions();
+    var passwordText = document.querySelector('#password');
+    if (finalPassword.length > 8 && finalPassword.length < 128) {
+        passwordText.value = finalPassword;
+    }
 }
 
 // Add event listener to generate button
