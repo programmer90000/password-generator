@@ -135,7 +135,11 @@ getPasswordOptions();
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+    for (let i = 0; i < lengthOfPassword; i++) {
+        randomElement = charactersInPassword[Math.floor(Math.random() * charactersInPassword.length)];
+        finalPassword.push(randomElement);
+    } // Generate the characters for the random password
+    finalPassword = finalPassword.join("")
 }
 
 // Function to generate password with user input
