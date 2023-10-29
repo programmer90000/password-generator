@@ -100,29 +100,25 @@ function getPasswordOptions() {
     lengthOfPassword = parseInt(lengthOfPassword);
 
     if (lengthOfPassword < 8 || lengthOfPassword > 128 || isNaN(lengthOfPassword)) {
-        console.log("This password is invalid");
+        ;
     } else {
         let lowerCaseLetters = confirm("Should your password contain lowercase letters");
         if (lowerCaseLetters) {
-            console.log("This password contains lower case letters");
             charactersInPassword.push(...lowerCasedCharacters);
         }
 
         let upperCaseLetters = confirm("Should your password contain uppercase letters");
         if (upperCaseLetters) {
-            console.log("This password contains upper case letters");
             charactersInPassword.push(...upperCasedCharacters);
         }
 
         let numbers = confirm("Should your password contain numbers");
         if (numbers) {
-            console.log("This password should contain numbers");
             charactersInPassword.push(...numericCharacters);
         }
 
         let specialCharactersInPassword = confirm("Should your password contain special characters");
         if (specialCharactersInPassword) {
-            console.log("This password should contain special characters");
             charactersInPassword.push(...specialCharacters);
         }
         
