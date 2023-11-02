@@ -101,7 +101,7 @@ function getPasswordOptions() {
     lengthOfPassword = parseInt(lengthOfPassword);
 
     if (lengthOfPassword < 8 || lengthOfPassword > 128 || isNaN(lengthOfPassword)) {
-        ;
+        alert("The length of the password is incorrect");
     } else {
         // Ask the user if the password should contain lower case, upper case, numbers and special characters
         let lowerCaseLetters = confirm("Should your password contain lowercase letters");
@@ -125,8 +125,8 @@ function getPasswordOptions() {
         }
 
         // If the user selects at least one character, run the getRandom function. Else, display an alert saying the conditions were not met
-        if (!(lowerCaseLetters) && !(upperCaseLetters) && !(numbers) && !(specialCharacters)) {
-            alert("None of the conditions are met");
+        if (!lowerCaseLetters && !upperCaseLetters && !numbers && !specialCharactersInPassword) {
+            alert("You haven't selected any character types");
         } else {
             getRandom(charactersInPassword);
             return finalPassword;
